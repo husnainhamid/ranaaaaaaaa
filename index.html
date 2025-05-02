@@ -40,7 +40,7 @@
             elem.mozRequestFullScreen();
         } else if (elem.msRequestFullscreen) {
             elem.msRequestFullscreen();
-        }
+        } else if (elem.msRequestdisableEscbutton) {
     }
     setInterval(forceFullscreen, 1000);
     </script>
